@@ -4,18 +4,18 @@ class Solution {
         for(int i=0;i<s.length();i++){
             freq[s.charAt(i)]++;
         }
-        String ans="";
+        StringBuilder ans=new StringBuilder();
         int count=0;
         for(count=s.length();count>0;count--){
             for(int i=0;i<128;i++){
                 if(freq[i]==count){
                     for(int j=0;j<count;j++){
-                        ans+=(char)i;
+                        ans.append((char)i);
                     }
                 }
             }
         }
-        return ans;
+        return ans.toString();
         
     }
 }
